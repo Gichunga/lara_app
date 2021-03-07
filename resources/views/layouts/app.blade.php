@@ -17,8 +17,13 @@
 <body>
 @include('inc.navbar')
 <div class="container">
+    @include('inc.messages')
     @yield('content')
 </div>
-    
+   
+
+
+<script src="{{ asset('ckeditor/ckeditor//ckeditor.js')}}"></script>
+<script>CKEDITOR.replace('article-ckeditor');</script>
 </body>
 </html>

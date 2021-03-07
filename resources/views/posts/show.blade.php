@@ -3,11 +3,19 @@
 @section('content')
 <div class="card m-3">
     <div class="card-header">
-        <a href="/posts" class="btn btn-small btn-primary">Go back</a>
+        <a href="/posts" class="btn btn-sm btn-primary">Go back</a>
         <h2>{{$post->title}}</h2>
+        <div class="d-inline">
+            <a href="/posts/{{$post->id}}/edit" class="btn btn-secondary btn-sm">Edit</a>
+            {!! Form::open(['class'=>'d-inline', 'action'=>['App\Http\Controllers\PostsController@destroy', $post->id], 'method'=>'POST']) !!}
+                {{Form::hidden('_method','DELETE')}}
+                {{Form::submit('Delete', ['class'=>'btn btn-danger btn-sm'])}}
+            {!!Form::close()!!}
+        </div>
     </div>
     <div class="card-body">
-        <p>{{$post->body}}</p>
+        {{-- To parse the html use {!! $variable !!} --}}
+        <p>{!!$post->body!!}</p>
     </div>
     <div class="card-footer">
         <small class="text-muted">Writen on {{ $post->created_at}}</small>
