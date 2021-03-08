@@ -29,7 +29,7 @@
                 @else
                         <li class="page-item">
                             <a href="{{ $url }}" class="page-link">{{ $page }}</a>
-                        </li>
+                        </li> 
                 @endif
                 @endforeach
             @endif

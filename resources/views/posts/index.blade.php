@@ -10,7 +10,7 @@
                     <p>{!!$post->body!!}</p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Writen on {{ $post->created_at}}</small>
+                    <small class="text-muted">Writen on {{$post->created_at}} by </small>
                 </div>
             </div>
         @endforeach
