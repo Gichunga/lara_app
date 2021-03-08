@@ -10,7 +10,7 @@
                     <p>{!!$post->body!!}</p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Writen on {{$post->created_at}} by </small>
+                    <small class="text-muted">Writen {{$post->created_at->diffForHumans()}} by {{ $post->user->name}}</small>
                 </div>
             </div>
         @endforeach
